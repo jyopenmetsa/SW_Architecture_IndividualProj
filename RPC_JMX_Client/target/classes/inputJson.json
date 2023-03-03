@@ -1,0 +1,27 @@
+{
+  "operations": [
+    {
+      "name": "grayscale"
+    },
+    {
+      "name": "rotate",
+      "parameter": "left"
+    },
+    {
+      "name": "rotate_angle",
+      "parameter": -45
+    },
+    {
+      "name": "thumbnail"
+    },
+    {
+      "name": "resize",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "name": "flip",
+      "parameter": "horizontal"
+    }
+  ]
+}
