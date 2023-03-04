@@ -82,9 +82,9 @@ public class MyServer implements MyRemoteInterface {
 
                     case "thumbnail":
                         System.out.println("thumbnail");
-                        image = operation.toThumbnail(image);
+                        BufferedImage thumbnailImage = operation.toThumbnail(image);
                         ByteArrayOutputStream thumbnailStream = new ByteArrayOutputStream();
-                        ImageIO.write(image, "png", thumbnailStream);
+                        ImageIO.write(thumbnailImage, "png", thumbnailStream);
                         byte[] thumbnailBytes = thumbnailStream.toByteArray();
                         responseImagesInBytes.add(thumbnailBytes);
                         thumbnailStream.close();
