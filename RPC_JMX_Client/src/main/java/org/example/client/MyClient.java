@@ -50,6 +50,8 @@ public class MyClient {
                 FileOutputStream fos = new FileOutputStream(outputFile);
                 fos.write(responseByteImages.get(i));
             }
+            
+            System.out.println("Successfully saved response files");
 
         } catch (Exception e) {
             e.printStackTrace();
