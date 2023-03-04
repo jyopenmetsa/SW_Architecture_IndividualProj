@@ -54,7 +54,8 @@ public class MyClient {
             System.out.println("Successfully saved response files");
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("ERROR:  "+e.getMessage());
+            System.out.println("Please try again");
         }
     }
 }
