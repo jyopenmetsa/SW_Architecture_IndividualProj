@@ -27,14 +27,33 @@ public class MyClient {
             // Read the inputJson file
             String filePath = MyClient.class.getClassLoader().getResource("inputJson.json").getPath();
             FileReader reader = new FileReader(filePath);
+            
+            Scanner FileNameScanner = new Scanner(System.in);
 
+            System.out.print("Enter your image file path: ");
+            String FilePath = FileNameScanner.nextLine();
+            System.out.println(FilePath);
+
+            Scanner Jsonscanner = new Scanner(System.in);
+            System.out.print("Enter input operations JSON data: ");
+            String jsonString = "";
+
+            // Read input lines until an empty line is entered
+            while (Jsonscanner.hasNextLine()) {
+                String line = Jsonscanner.nextLine();
+                if (line.isEmpty()) {
+                    break;
+                }
+                jsonString += line;
+            }
+            
             // Parse the JSON file into a JSONObject
             JSONParser parser = new JSONParser();
-            JSONObject inputJsonObject = (JSONObject) parser.parse(reader);
+            JSONObject inputJsonObject = (JSONObject) parser.parse(jsonString);
             System.out.println(inputJsonObject);
 
             // Read the image and convert into bytes
-            File file = new File("C:\\Anjali\\Proj Management\\poker.jpg");
+            File file = new File(FilePath);
             BufferedImage inputImage = ImageIO.read(file);
             System.out.println(inputImage.getHeight());
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
