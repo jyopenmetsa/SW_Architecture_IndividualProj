@@ -1,8 +1,0 @@
-{
-  "operations": [
-    {
-      "name": "rotate_angle",
-      "parameter": 45
-    }
-  ]
-}
