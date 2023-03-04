@@ -20,6 +20,7 @@ public class MyServer implements MyRemoteInterface {
 
         System.out.println("Hello Server!");
         try {
+            // Create object for server class and bind it to the local registry running on 1099 port
             MyServer server = new MyServer();
             MyRemoteInterface stub = (MyRemoteInterface) UnicastRemoteObject.exportObject(server, 0);
             Registry registry = LocateRegistry.createRegistry(1099); // Bind the stub in the RMI registry
