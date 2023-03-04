@@ -20,6 +20,7 @@ public class MyClient {
         System.out.println("Hello client!");
 
         try {
+            // Locate the server in the registry and create a stub for the communication
             Registry registry = LocateRegistry.getRegistry("localhost", 1099);
             MyRemoteInterface stub = (MyRemoteInterface) registry.lookup("MyRemoteInterface");
 
@@ -32,13 +33,15 @@ public class MyClient {
             JSONObject inputJsonObject = (JSONObject) parser.parse(reader);
             System.out.println(inputJsonObject);
 
-            //Call imageProcessor method from server
+            // Read the image and convert into bytes
             File file = new File("C:\\Anjali\\Proj Management\\poker.jpg");
             BufferedImage inputImage = ImageIO.read(file);
             System.out.println(inputImage.getHeight());
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(inputImage, "png", baos);
             byte[] imageInBytes = baos.toByteArray();
+            
+            //Call remote imageProcessor method (running on server)
             ArrayList<byte[]> responseByteImages = stub.imageProcessor(imageInBytes,inputJsonObject);
 
             for (int i = 0; i < responseByteImages.size(); i++) {
