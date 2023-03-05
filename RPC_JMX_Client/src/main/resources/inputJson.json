@@ -1,9 +1,6 @@
 {
   "operations": [
     {
-      "name": "grayscale"
-    },
-    {
       "name": "rotate",
       "parameter": "left"
     },
@@ -13,6 +10,9 @@
     },
     {
       "name": "thumbnail"
+    },
+    {
+      "name": "grayscale"
     },
     {
       "name": "resize",

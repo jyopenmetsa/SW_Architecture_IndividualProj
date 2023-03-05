@@ -22,9 +22,8 @@ public class Operations {
                 int gray = (int) (0.2126 * color.getRed() + 0.7152 * color.getGreen() + 0.0722 * color.getBlue());
                 Color grayColor = new Color(gray, gray, gray);
                 inputImage.setRGB(x, y, grayColor.getRGB());
-            }            }
-
-        System.out.println("processed image size "+inputImage.getWidth());
+            }
+        }
 
         return inputImage;
     }
@@ -82,7 +81,6 @@ public class Operations {
 
     public BufferedImage toFlip(BufferedImage inputImage, String flipDirection) throws IOException {
 
-        System.out.println("Flip DIrection : "+flipDirection);
         // Flip the image
         int width = inputImage.getWidth();
         int height = inputImage.getHeight();
@@ -90,7 +88,6 @@ public class Operations {
 
         Graphics2D g2d = outputImage.createGraphics();
         if (flipDirection.equals("horizontal")) {
-            System.out.println("in horizontal");
             g2d.drawImage(inputImage, width, 0, -width, height, null);
         } else {
             System.out.println("vertical");

@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="RPC_JMX_Server" />
-        <module name="RPC_JMX_Client" />
+        <module name="RPC_Client" />
         <module name="RPC_JMX_Shared" />
       </profile>
     </annotationProcessing>
