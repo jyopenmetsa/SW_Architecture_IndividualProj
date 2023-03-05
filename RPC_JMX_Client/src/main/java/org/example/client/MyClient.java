@@ -29,7 +29,6 @@ public class MyClient {
             String remoteInterface = reader.getProperty("remote.interface");
             String finalImagePath = reader.getProperty("finalImagePath");
             String imageFormat = reader.getProperty("image.format");
-            System.out.println(finalImagePath);
 
             // Locate the server in the registry and create a stub for the communication
             Registry registry = LocateRegistry.getRegistry(serverHost, Integer.parseInt(serverPort));
